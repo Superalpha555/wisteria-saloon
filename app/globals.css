@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --paper-white: #F3F1EC;
+    --ink-black: #161616;
+    --charcoal: #292929;
+    --soft-grey: #D8D6D0;
+    --deep-cherry: #C7353E;
+    --deep-cherry-hover: #9F252D;
+  }
+
+  body {
+    background-color: var(--paper-white);
+    color: var(--ink-black);
+    font-family: 'Inter', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: var(--deep-cherry);
+    selection-color: var(--paper-white);
+  }
+
+  ::selection {
+    background-color: #C7353E;
+    color: #F3F1EC;
+  }
+}
+
+.font-display {
+  font-family: 'Inter', var(--font-display), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Clean Minimalism Theme Specific Styles */
+.editorial-line {
+  height: 1px;
+  background-color: #161616;
+  opacity: 0.15;
+}
+
+.editorial-line-dark {
+  height: 1px;
+  background-color: #F3F1EC;
+  opacity: 0.15;
+}
+
+.cherry-accent {
+  color: #C7353E;
+}
+
+.bg-cherry {
+  background-color: #C7353E;
+}
+
+.skew-text {
+  transform: skewX(-5deg);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Editorial strike & custom transitions */
+.editorial-strike {
+  position: relative;
+  display: inline-block;
+}
+
+.editorial-strike::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-strike:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hide scrollbar for clean horizontal scrollers if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
