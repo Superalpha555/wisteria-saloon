@@ -1,0 +1,6 @@
+{
+  "name": "Wisteria Salon",
+  "description": "Wisteria Salon in Erandwane, Pune. Explore hair, colour, beauty and grooming services and enquire about your next appointment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
